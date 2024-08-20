@@ -2,7 +2,9 @@
 import AgoraRTC from "agora-rtc-sdk-ng";
 import './App.css';
 
-
+const APP_ID ="2d37054ef004447386e373375b4ac741";
+const TOKEN = "007eJxTYLigeria5dHxVmn+NJ2tXouEb8664nK7y32+iaTx/xfK7FkKDEYpxuYGpiapaQYGJiYm5sYWZqnG5sbG5qZJJonJ5iaGBp2H0xoCGRnMWhaxMjJAIIjPwpCbmJnHwAAAzoIdSg==";
+const CHANNEL_NAME = "main";
 
 const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
@@ -70,10 +72,12 @@ import AgoraRTC from "agora-rtc-sdk-ng";
 import './App.css';
 
 
-const APP_ID = process.env.REACT_APP_AGORA_APP_ID;
-const TOKEN = process.env.REACT_APP_AGORA_TOKEN;
-const CHANNEL_NAME = process.env.REACT_APP_AGORA_CHANNEL_NAME;
-
+//const APP_ID = process.env.REACT_APP_AGORA_APP_ID;
+//const TOKEN = process.env.REACT_APP_AGORA_TOKEN;
+//const CHANNEL_NAME = process.env.REACT_APP_AGORA_CHANNEL_NAME;
+const APP_ID ="2d37054ef004447386e373375b4ac741";
+const TOKEN = "007eJxTYLigeria5dHxVmn+NJ2tXouEb8664nK7y32+iaTx/xfK7FkKDEYpxuYGpiapaQYGJiYm5sYWZqnG5sbG5qZJJonJ5iaGBp2H0xoCGRnMWhaxMjJAIIjPwpCbmJnHwAAAzoIdSg==";
+const CHANNEL_NAME = "main";
 
 
 const client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
