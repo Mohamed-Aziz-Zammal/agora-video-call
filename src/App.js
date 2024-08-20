@@ -93,7 +93,13 @@ function App() {
   const joinChannel = async () => {
     await client.join(APP_ID, CHANNEL_NAME, TOKEN, null);
     localTracks.current = await AgoraRTC.createMicrophoneAndCameraTracks();
-    const [audioTrack, videoTrack] = localTracks.current;
+    //const [audioTrack, videoTrack] = localTracks.current;
+    const [audioTrack, videoTrack] = await AgoraRTC.createMicrophoneAndCameraTracks({
+      microphoneConfig: {
+        encoderConfig: "high_quality_stereo" // يمكنك تجربة إعدادات مختلفة مثل "speech_low_quality" أو "music_standard"
+      }
+    });
+    
     videoTrack.play(videoContainer.current);
     await client.publish([audioTrack, videoTrack]);
     setJoined(true);
