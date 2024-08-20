@@ -126,7 +126,7 @@ function App() {
     setCamOn(!camOn);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     client.on("user-published", async (user, mediaType) => {
       await client.subscribe(user, mediaType);
       if (mediaType === "video") {
@@ -139,6 +139,25 @@ function App() {
       }
     });
 
+    client.on("user-unpublished", (user) => {
+      const player = document.getElementById(user.uid);
+      if (player) player.remove();
+    });
+  }, []);*/
+
+  useEffect(() => {
+    client.on("user-published", async (user, mediaType) => {
+      await client.subscribe(user, mediaType);
+      if (mediaType === "video") {
+        const remoteVideoTrack = user.videoTrack;
+        const player = document.createElement("div");
+        player.id = user.uid;
+        player.className = "video-box";
+        videoContainer.current.append(player);
+        remoteVideoTrack.play(player);
+      }
+    });
+  
     client.on("user-unpublished", (user) => {
       const player = document.getElementById(user.uid);
       if (player) player.remove();

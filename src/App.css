@@ -5,17 +5,16 @@
 
 .video-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+  gap: 20px;
 }
 
 .video-box {
-  width: 320px;
-  height: 240px;
-  background-color: black;
-  margin: 10px;
+  width: 300px;
+  height: 200px;
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .controls {
